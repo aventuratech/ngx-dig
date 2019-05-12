@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "NgxDig": {
+      "root": "projects/ngx-dig",
+      "sourceRoot": "projects/ngx-dig/src",
+      "projectType": "library",
+      "prefix": "ngx-dig",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-dig/tsconfig.lib.json",
+            "project": "projects/ngx-dig/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-dig/src/test.ts",
+            "tsConfig": "projects/ngx-dig/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-dig/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-dig/tsconfig.lib.json",
+              "projects/ngx-dig/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "platform"
