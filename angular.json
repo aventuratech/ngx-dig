@@ -139,6 +139,11 @@
       "sourceRoot": "projects/ngx-dig/src",
       "projectType": "library",
       "prefix": "ngx-dig",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
